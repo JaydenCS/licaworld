@@ -1,9 +1,15 @@
+import { error } from "console";
 import NextAuth from "next-auth"
 import LinkedInProvider from "next-auth/providers/linkedin";
+import { pages } from "next/dist/build/templates/app-page";
 
 
 export const authOptions = {  
     secret: process.env.SECRET,
+    pages: {
+        signIn: '/',  
+        error:'/'      
+    },
   providers: [
     LinkedInProvider({
       clientId: process.env.LINKEDIN_CLIENT_ID,
