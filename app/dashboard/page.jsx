@@ -27,15 +27,16 @@ export default function Dashboard() {
    const [previewImage , setPreviewImage] = useState(null)
 
   // when window loads complete then check for session, if not redirect to login page
-  useEffect(() => {
-    if(status === 'loading'){
-      return
-    }
-    if(!session){
-      window.location.href = '/'
-    }
-  }
-  ,[status,session])
+  // useEffect(() => {
+  //   useEffect(() => {
+  //     if(status === 'loading'){
+  //       return
+  //     }
+  //     if(!session){
+  //       window.location.href = '/'
+  //     }
+  //   }
+    // ,[status,session])
   const handleTextChange = (e) => {
         setText(e.target.value)
     }
@@ -143,7 +144,7 @@ export default function Dashboard() {
   
       const post = await postresponse.json();
   
-      if(postresponse.status === 200){
+      if(postresponse.status === 201){
         toast.success('Post Created Successfully')
       }else{
         toast.error('Post Creation Failed')
