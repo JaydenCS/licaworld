@@ -16,6 +16,7 @@ export async function POST(req) {
     const userid = await useridresponse.json();
     return NextResponse.json({
         id: userid.sub,
+        pic: userid.picture
     })
   }else{
     return NextResponse.error(new Error("Invalid session"));

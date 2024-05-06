@@ -12,26 +12,28 @@ export default function Home() {
 <>
 <div className="grid min-h-[100dvh] w-full grid-cols-1 lg:grid-cols-2">
   <div className="flex flex-col items-start justify-center gap-6 bg-gray-100 p-8 dark:bg-gray-800 lg:p-12">
-  <MountainIcon className="h-6 w-6" />
-
-    <div className="space-y-4">
+  <div className="flex items-center -mt-80 gap-2">
+  <MountainIcon className="h-6 w-6"  />
+  <h3 className="font-semibold"> Lica World</h3>
+</div>
+    <div className="space-y-4 mt-52">
       <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Grow your Audience While You Sleep</h1>
       <p className="text-gray-500 dark:text-gray-400 md:text-xl">Craft, Schedule, Test and Automate your linkedIn post in a single place.</p>
       <ul class="list-disc list-inside space-y-1.5 ">
                     <li class="flex gap-2 items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 shrink-0 opacity-75"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"></path></svg>
-                    Human Written Summary with Easy words
+                    Craft your LinkedIn post with Pre-built Templates
                     </li>
                     <li class="flex gap-2 items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 shrink-0 opacity-75"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"></path></svg>
-                    Focus on Getting Each Golden Nuggets
+                    AI Assist for Brain Storming
                     </li>
                     <li class="flex gap-2 items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 shrink-0 opacity-75"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"></path></svg>
                         Once Created, Save as Note for Lifetime
                         </li>
                         <li class="flex gap-2 items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 shrink-0 opacity-75"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"></path></svg>
-                        Get Summary in Multiple Forms
+                        A/B Test your Content and Analyze
                         </li>
                         <li class="flex gap-2 items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 shrink-0 opacity-75"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"></path></svg>
                         Get Clear Insights and Clarity
@@ -40,7 +42,7 @@ export default function Home() {
     </div>
     <Button
       type="submit"
-      className="flex w-full items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+      className="flex w-1/3 items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
       size="icon"
       variant="outline"
       onClick={() => signIn('linkedin', { callbackUrl: '/dashboard' })}

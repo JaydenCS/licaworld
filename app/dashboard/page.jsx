@@ -15,11 +15,12 @@ import { Textarea } from "/components/ui/textarea"
 import { useRef } from "react"
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer,toast } from "react-toastify";
-
+import { useEffect } from "react";
 
 
 export default function Dashboard() {
    const { data: session, status } = useSession()
+   console.log(session)
     const fileInputRef = useRef(null)
    const [text , setText] = useState('')
    const [isimage , setIsImage] = useState(false)
@@ -86,26 +87,26 @@ export default function Dashboard() {
 
           if (uploadresponse.status === 200){
             // make api call to post image and text
-            // const postresponse = await fetch('/api/postimage',{
-            //   method:"POST",
-            //   headers: {
-            //     'Content-Type': 'application/json',
-            //   },
-            //   body: JSON.stringify({
-            //     id: userid.id,
-            //     text: text,
-            //     uploadid: asset.uploadId
-            //   })
-            // });
+            const postresponse = await fetch('/api/postimage',{
+              method:"POST",
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                id: userid.id,
+                text: text,
+                uploadid: asset.uploadId
+              })
+            });
       
-            // const post = await postresponse.json();
+            const post = await postresponse.json();
         
-            // if(postresponse.status === 200){
+            if(postresponse.status === 200){
               toast.success("Post Created Successfully")
-            // }
-            // else{
-            //   toast.error("Posting Failed")
-            // }
+            }
+            else{
+              toast.error("Posting Failed")
+            }
         
           }
         }else{
@@ -210,7 +211,13 @@ export default function Dashboard() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>{session?.user?.name}</DropdownMenuLabel>
+              <DropdownMenuLabel>
+                {session && (
+                  <>
+                  {session.user?.name}
+                  </>
+                )}
+              </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem
               onClick={() => signOut({ callbackUrl: '/'})}
