@@ -3,6 +3,7 @@ import LinkedInProvider from "next-auth/providers/linkedin";
 
 
 export const authOptions = {  
+    secret: process.env.SECRET,
   providers: [
     LinkedInProvider({
       clientId: process.env.LINKEDIN_CLIENT_ID,
